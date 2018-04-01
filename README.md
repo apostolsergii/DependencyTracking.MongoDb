@@ -7,7 +7,7 @@ To use this library, you need to provide implementation of logger, for instance:
 
 This repository includes two samples:
 
-g* [Console logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/tree/master/DependencyTracking.MongoDb.SampleApp)
+* [Console logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/tree/master/DependencyTracking.MongoDb.SampleApp)
 * [Application insight logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/tree/master/DependencyTracking.MongoDb.SampleWebApp)
 
 ## Usage
@@ -22,7 +22,7 @@ g* [Console logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/
 
 ```csharp
 
-//loger implementation
+//logger implementation
 public class Logger : ILogger, IDependencyTracker
 {
 	public void Exception(Exception exception)
