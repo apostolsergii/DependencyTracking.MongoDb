@@ -7,7 +7,7 @@ using MongoDB.Driver.Core.Events;
 
 namespace DependencyTracking.MongoDb
 {
-    public class MongoTrackingConfigurator
+    internal class MongoTrackingConfigurator
     {
         private readonly ConcurrentDictionary<int, string> _queriesBuffer = new ConcurrentDictionary<int, string>();
 

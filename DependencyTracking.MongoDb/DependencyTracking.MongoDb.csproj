@@ -1,7 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFrameworks>netstandard1.5;</TargetFrameworks>
+    <Authors>Sergii Apostol</Authors>
+    <Company />
+    <Description>Logs basic information about MongoDb queries to abstract logger</Description>
+    <PackageProjectUrl>https://github.com/apostolsergii/DependencyTracking.MongoDb</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/apostolsergii/DependencyTracking.MongoDb</RepositoryUrl>
+    <PackageTags>MongoDb;DependecyTracking</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

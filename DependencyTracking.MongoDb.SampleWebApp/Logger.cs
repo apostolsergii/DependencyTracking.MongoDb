@@ -3,6 +3,9 @@ using Microsoft.ApplicationInsights;
 
 namespace DependencyTracking.MongoDb.SampleWebApp
 {
+    /// <summary>
+    /// Logger implementation as a wrapper around TelemetryClient
+    /// </summary>
     public class Logger : ILogger, IDependencyTracker
     {
         private readonly TelemetryClient _telemetryClient;
