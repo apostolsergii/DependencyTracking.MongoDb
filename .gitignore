@@ -1,0 +1,10 @@
+.vs/
+DependencyTracking.MongoDb.SampleApp/bin/
+DependencyTracking.MongoDb.SampleApp/obj/
+DependencyTracking.MongoDb.SampleWebApp/bin/
+DependencyTracking.MongoDb.SampleWebApp/obj/
+MongoTracking/bin/
+MongoTracking/obj/
+packages/
+DependencyTracking.MongoDb/obj/
+DependencyTracking.MongoDb/bin/
