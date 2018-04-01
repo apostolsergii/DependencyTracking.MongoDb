@@ -7,7 +7,7 @@ To use this library, you need to provide implementation of logger, for instance:
 
 This repository includes two samples:
 
-* [Console logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/tree/master/DependencyTracking.MongoDb.SampleApp)
+g* [Console logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/tree/master/DependencyTracking.MongoDb.SampleApp)
 * [Application insight logger](https://github.com/apostolsergii/DependencyTracking.MongoDb/tree/master/DependencyTracking.MongoDb.SampleWebApp)
 
 ## Usage
