@@ -3,6 +3,9 @@ Extend MongoClient with possibility to log queries into abstract logger.
 
 To use this library, you need to provide implementation of logger, for instance: [Console logger] [#console-logger] or [Application insight logger] [#application-insight-logger]
 
+## Nuget
+[Nuget package](https://www.nuget.org/packages/DependencyTracking.MongoDb/)
+
 ## Samples
 
 This repository includes two samples:
