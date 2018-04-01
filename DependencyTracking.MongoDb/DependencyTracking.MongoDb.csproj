@@ -7,7 +7,7 @@
     <Description>Logs basic information about MongoDb queries to abstract logger</Description>
     <PackageProjectUrl>https://github.com/apostolsergii/DependencyTracking.MongoDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/apostolsergii/DependencyTracking.MongoDb</RepositoryUrl>
-    <PackageTags>MongoDb;DependecyTracking</PackageTags>
+    <PackageTags>MongoDb;DependecyTracking;ApplicationInsight</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
