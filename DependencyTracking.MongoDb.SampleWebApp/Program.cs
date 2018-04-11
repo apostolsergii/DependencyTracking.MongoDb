@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace DependencyTracking.MongoDb.SampleWebApp
+namespace DependencyTracking.SampleWebApp
 {
     public class Program
     {

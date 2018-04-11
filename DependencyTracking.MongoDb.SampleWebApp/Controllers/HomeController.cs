@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using DependencyTracking.MongoDb;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace DependencyTracking.MongoDb.SampleWebApp.Controllers
+namespace DependencyTracking.SampleWebApp.Controllers
 {
     [Route("api/test")]
     public class HomeController : Controller

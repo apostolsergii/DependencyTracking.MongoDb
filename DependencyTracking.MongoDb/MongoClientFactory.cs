@@ -1,4 +1,5 @@
 ﻿using System;
+using DependencyTracking.Abstraction;
 using MongoDB.Driver;
 
 namespace DependencyTracking.MongoDb

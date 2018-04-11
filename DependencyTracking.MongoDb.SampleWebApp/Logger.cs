@@ -1,7 +1,8 @@
 ﻿using System;
+using DependencyTracking.Abstraction;
 using Microsoft.ApplicationInsights;
 
-namespace DependencyTracking.MongoDb.SampleWebApp
+namespace DependencyTracking.SampleWebApp
 {
     /// <summary>
     /// Logger implementation as a wrapper around TelemetryClient

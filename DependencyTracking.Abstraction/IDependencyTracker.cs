@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependencyTracking.MongoDb
+namespace DependencyTracking.Abstraction
 {
     public interface IDependencyTracker
     {

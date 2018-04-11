@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using System.Linq;
+using DependencyTracking.Abstraction;
 using MongoDB.Driver;
 using MongoDB.Driver.Core.Events;
 

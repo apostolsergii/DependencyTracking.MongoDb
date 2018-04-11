@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DependencyTracking.Abstraction;
+using DependencyTracking.MongoDb;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DependencyTracking.MongoDb.SampleWebApp
+namespace DependencyTracking.SampleWebApp
 {
     public class Startup
     {

@@ -5,9 +5,11 @@ VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyTracking.MongoDb", "DependencyTracking.MongoDb\DependencyTracking.MongoDb.csproj", "{A4349538-F9B9-4B8D-AE08-045705D2DF9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyTracking.MongoDb.SampleApp", "DependencyTracking.MongoDb.SampleApp\DependencyTracking.MongoDb.SampleApp.csproj", "{ABEC8674-A5F3-4840-8EB3-F32E2B9DF31A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyTracking.SampleApp", "DependencyTracking.MongoDb.SampleApp\DependencyTracking.SampleApp.csproj", "{ABEC8674-A5F3-4840-8EB3-F32E2B9DF31A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyTracking.MongoDb.SampleWebApp", "DependencyTracking.MongoDb.SampleWebApp\DependencyTracking.MongoDb.SampleWebApp.csproj", "{4DA561AA-5FF2-4A0E-9A50-0D22D57FF3CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyTracking.SampleWebApp", "DependencyTracking.MongoDb.SampleWebApp\DependencyTracking.SampleWebApp.csproj", "{4DA561AA-5FF2-4A0E-9A50-0D22D57FF3CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyTracking.Abstraction", "DependencyTracking.Abstraction\DependencyTracking.Abstraction.csproj", "{2E7A1E9F-4590-4C2E-9AE4-1EC9B5C8A62B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4DA561AA-5FF2-4A0E-9A50-0D22D57FF3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DA561AA-5FF2-4A0E-9A50-0D22D57FF3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DA561AA-5FF2-4A0E-9A50-0D22D57FF3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E7A1E9F-4590-4C2E-9AE4-1EC9B5C8A62B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E7A1E9F-4590-4C2E-9AE4-1EC9B5C8A62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E7A1E9F-4590-4C2E-9AE4-1EC9B5C8A62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E7A1E9F-4590-4C2E-9AE4-1EC9B5C8A62B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

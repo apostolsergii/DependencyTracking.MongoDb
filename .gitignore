@@ -8,3 +8,5 @@ MongoTracking/obj/
 packages/
 DependencyTracking.MongoDb/obj/
 DependencyTracking.MongoDb/bin/
+DependencyTracking.Abstraction/bin/
+DependencyTracking.Abstraction/obj/

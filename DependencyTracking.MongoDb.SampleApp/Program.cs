@@ -1,8 +1,10 @@
 ﻿using System;
+using DependencyTracking.Abstraction;
+using DependencyTracking.MongoDb;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace DependencyTracking.MongoDb.SampleApp
+namespace DependencyTracking.SampleApp
 {
     class Program
     {
