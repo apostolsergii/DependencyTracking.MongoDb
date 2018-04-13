@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace DependencyTracking.SampleWebApp
+namespace DependencyTracking.SampleCoreWebApp
 {
     public class Program
     {

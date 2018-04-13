@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DependencyTracking.Http\DependencyTracking.Http.csproj" />
     <ProjectReference Include="..\DependencyTracking.MongoDb\DependencyTracking.MongoDb.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DependencyTracking.Abstraction;
 using MongoDB.Driver;
 
@@ -6,13 +8,20 @@ namespace DependencyTracking.MongoDb
 {
     public class MongoClientFactory
     {
-        private readonly MongoTrackingConfigurator _configurator;
+        private readonly TrackedMongoClientSettings _configurator;
 
-        public MongoClientFactory(IDependencyTracker dependencyTracker,
-            MongoClientSettingsFactorySettings settings = null,
-            ILogger logger = null)
+        private readonly IEnumerable<string> _notTrackedCommands = new[]
+            {"isMaster", "buildInfo", "getLastError", "saslStart", "saslContinue"};
+
+        private const string DependencyName = "MongoDb";
+
+        public MongoClientFactory(IDependencyTracker dependencyTracker, string dependencyName = null,
+            IEnumerable<string> notTrackedCommands = null)
         {
-            _configurator = new MongoTrackingConfigurator(dependencyTracker, settings, logger);
+            notTrackedCommands = notTrackedCommands?.Any() == true ? notTrackedCommands : _notTrackedCommands;
+
+            _configurator = new TrackedMongoClientSettings(dependencyTracker, dependencyName ?? DependencyName,
+                notTrackedCommands);
         }
 
         public MongoClientSettings Get(string connectionString)

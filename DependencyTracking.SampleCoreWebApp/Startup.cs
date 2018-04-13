@@ -1,11 +1,13 @@
 ﻿using DependencyTracking.Abstraction;
+using DependencyTracking.ApplicationInsight;
+using DependencyTracking.Http;
 using DependencyTracking.MongoDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DependencyTracking.SampleWebApp
+namespace DependencyTracking.SampleCoreWebApp
 {
     public class Startup
     {
@@ -22,11 +24,12 @@ namespace DependencyTracking.SampleWebApp
         /// </summary>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationInsightsTelemetry(Configuration);
             services.AddMvc();
-            services.AddSingleton<ILogger, Logger>();
-            services.AddSingleton<IDependencyTracker, Logger>();
+            services.AddSingleton(new DependencyLoggingSettings());
+            services.AddSingleton<IDependencyTracker, DependencyTracker>();
             services.AddSingleton<MongoClientFactory>();
-            services.AddSingleton<MongoClientSettingsFactorySettings>();
+            services.AddSingleton<HttpClientFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

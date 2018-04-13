@@ -10,3 +10,11 @@ DependencyTracking.MongoDb/obj/
 DependencyTracking.MongoDb/bin/
 DependencyTracking.Abstraction/bin/
 DependencyTracking.Abstraction/obj/
+DependencyTracking.ApplicationInsight/bin/
+DependencyTracking.ApplicationInsight/obj/
+DependencyTracking.Http/bin/
+DependencyTracking.Http/obj/
+DependencyTracking.SampleApp/bin/
+DependencyTracking.SampleApp/obj/
+DependencyTracking.SampleCoreWebApp/bin/
+DependencyTracking.SampleCoreWebApp/obj/

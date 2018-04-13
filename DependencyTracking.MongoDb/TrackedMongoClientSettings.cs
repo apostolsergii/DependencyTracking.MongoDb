@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using DependencyTracking.Abstraction;
@@ -8,38 +9,42 @@ using MongoDB.Driver.Core.Events;
 
 namespace DependencyTracking.MongoDb
 {
-    internal class MongoTrackingConfigurator
+    internal class TrackedMongoClientSettings
     {
         private readonly ConcurrentDictionary<int, string> _queriesBuffer = new ConcurrentDictionary<int, string>();
 
         private readonly IDependencyTracker _dependencyTracker;
 
-        public MongoTrackingConfigurator(IDependencyTracker dependencyTracker,
-            MongoClientSettingsFactorySettings settings = null,
-            ILogger logger = null)
+        private readonly string _dependencyName;
+
+        public TrackedMongoClientSettings(IDependencyTracker dependencyTracker, string dependencyName,
+            IEnumerable<string> notTrackedCommands)
         {
-            _dependencyTracker = dependencyTracker ?? throw new ArgumentNullException($"{nameof(dependencyTracker)} is required");
-            var notTrackedCommands = (settings ?? new MongoClientSettingsFactorySettings()).NotTrackedCommands.Select(v=>v.ToLower()).ToImmutableHashSet();
+            _dependencyName = dependencyName;
+            _dependencyTracker = dependencyTracker ??
+                                 throw new ArgumentNullException($"{nameof(dependencyTracker)} is required");
+            var ignoredCommands = (notTrackedCommands ?? Enumerable.Empty<string>())
+                .Select(v => v.ToLower()).ToImmutableHashSet();
 
             OnCommandStartEvent = e =>
             {
                 try
                 {
-                    if (e.Command != null && !notTrackedCommands.Contains(e.CommandName.ToLower()))
+                    if (e.Command != null && !ignoredCommands.Contains(e.CommandName.ToLower()))
                     {
                         // ReSharper disable once SpecifyACultureInStringConversionExplicitly
                         _queriesBuffer.TryAdd(e.RequestId, e.Command.ToString());
                     }
                 }
-                catch (Exception exception)
+                catch
                 {
-                    logger?.Exception(exception);
+                    // ignored
                 }
             };
 
             OnCommandSucceededEvent = e =>
             {
-                if (notTrackedCommands.Contains(e.CommandName.ToLower()))
+                if (ignoredCommands.Contains(e.CommandName.ToLower()))
                     return;
 
                 try
@@ -51,15 +56,15 @@ namespace DependencyTracking.MongoDb
                                 e.Duration));
                     }
                 }
-                catch (Exception exception)
+                catch
                 {
-                    logger?.Exception(exception);
+                    // ignored
                 }
             };
 
             OnCommandFailedEvent = e =>
             {
-                if (notTrackedCommands.Contains(e.CommandName.ToLower()))
+                if (ignoredCommands.Contains(e.CommandName.ToLower()))
                     return;
                 try
                 {
@@ -68,16 +73,16 @@ namespace DependencyTracking.MongoDb
                             new MongoCommandCompletedEventArgs(e.CommandName, query, false,
                                 e.Duration));
                 }
-                catch (Exception exception)
+                catch
                 {
-                    logger?.Exception(exception);
+                    // ignored
                 }
             };
         }
 
         private void OnCommandCompleted(MongoCommandCompletedEventArgs args)
         {
-            _dependencyTracker.Dependency(args.CommandName, args.Query, args.Success, args.Duration);
+            _dependencyTracker.Dependency(_dependencyName, args.CommandName, args.Query, args.Success, args.Duration);
         }
 
         internal readonly Action<CommandStartedEvent> OnCommandStartEvent;
