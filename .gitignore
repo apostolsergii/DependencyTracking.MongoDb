@@ -18,3 +18,6 @@ DependencyTracking.SampleApp/bin/
 DependencyTracking.SampleApp/obj/
 DependencyTracking.SampleCoreWebApp/bin/
 DependencyTracking.SampleCoreWebApp/obj/
+*.user
+DependencyTracking.SampleWebApp/bin/
+DependencyTracking.SampleWebApp/obj/
